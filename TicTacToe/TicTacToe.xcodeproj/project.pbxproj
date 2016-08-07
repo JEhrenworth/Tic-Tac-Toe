@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81FCBD6C1D56285C00059839 /* MiniMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCBD6B1D56285C00059839 /* MiniMax.swift */; };
+		81FCBD741D5671DF00059839 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCBD731D5671DF00059839 /* HelperFunctions.swift */; };
+		81FCBD781D5762D200059839 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCBD771D5762D200059839 /* GameLogic.swift */; };
+		81FCBD7A1D5765DC00059839 /* InstanceDeclarations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FCBD791D5765DC00059839 /* InstanceDeclarations.swift */; };
 		940E240F1D53C59A00014546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E240E1D53C59A00014546 /* AppDelegate.swift */; };
 		940E24141D53C59A00014546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 940E24121D53C59A00014546 /* Main.storyboard */; };
 		940E24161D53C59A00014546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940E24151D53C59A00014546 /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81FCBD6B1D56285C00059839 /* MiniMax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiniMax.swift; path = ../MiniMax.swift; sourceTree = "<group>"; };
+		81FCBD731D5671DF00059839 /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperFunctions.swift; path = ../HelperFunctions.swift; sourceTree = "<group>"; };
+		81FCBD771D5762D200059839 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameLogic.swift; path = ../GameLogic.swift; sourceTree = "<group>"; };
+		81FCBD791D5765DC00059839 /* InstanceDeclarations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceDeclarations.swift; path = ../InstanceDeclarations.swift; sourceTree = "<group>"; };
 		940E240B1D53C59A00014546 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		940E240E1D53C59A00014546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		940E24131D53C59A00014546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				940E240E1D53C59A00014546 /* AppDelegate.swift */,
+				81FCBD771D5762D200059839 /* GameLogic.swift */,
+				81FCBD731D5671DF00059839 /* HelperFunctions.swift */,
+				81FCBD791D5765DC00059839 /* InstanceDeclarations.swift */,
+				81FCBD6B1D56285C00059839 /* MiniMax.swift */,
 				940E24201D53D5F900014546 /* TicTacToeViewController.swift */,
 				940E24121D53C59A00014546 /* Main.storyboard */,
 				940E24151D53C59A00014546 /* Assets.xcassets */,
@@ -135,8 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81FCBD741D5671DF00059839 /* HelperFunctions.swift in Sources */,
 				940E240F1D53C59A00014546 /* AppDelegate.swift in Sources */,
 				940E24211D53D5F900014546 /* TicTacToeViewController.swift in Sources */,
+				81FCBD7A1D5765DC00059839 /* InstanceDeclarations.swift in Sources */,
+				81FCBD781D5762D200059839 /* GameLogic.swift in Sources */,
+				81FCBD6C1D56285C00059839 /* MiniMax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +302,7 @@
 				940E241F1D53C59A00014546 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
