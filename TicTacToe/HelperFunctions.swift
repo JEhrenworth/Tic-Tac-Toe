@@ -1,3 +1,4 @@
+/* Implements basic helper functions. */
 //
 //  HelperFunctions.swift
 //  TicTacToe
@@ -65,4 +66,14 @@ public class Helper {
         }; return true
     }
     
+    func localChangeTurn(turn: Turn) -> Turn {
+        // PARAMS: turn (Turn): current turn
+        // RETURNS: Turn
+        // USE: return the opposite turn of the turn passed in
+        // NOTE!: doesn't modify currentTurn in view controller
+        
+        if turn == Turn.PlayerX {
+            return Turn.PlayerO
+        }; return Turn.PlayerX
+    }
 }

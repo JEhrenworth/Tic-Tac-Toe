@@ -1,3 +1,4 @@
+/* Implements main game logic. */
 //
 //  GameLogic.swift
 //  TicTacToe
@@ -13,7 +14,7 @@ public class Logic {
     func squareIsValidMove(squareData: String) -> Bool {
         // PARAMS: squareData (String): the data of selected square
         // RETURNS: Bool
-        // USE: see if selected square can be played on
+        // USE: return true if selected square can be played on
         
         if squareData == "" {
             return true

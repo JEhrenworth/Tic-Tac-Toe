@@ -1,3 +1,4 @@
+/* Declare instances of main classes for ease of use in later files. */
 //
 //  InstanceDeclarations.swift
 //  TicTacToe

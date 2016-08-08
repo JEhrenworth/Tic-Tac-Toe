@@ -1,3 +1,4 @@
+/* Send out calls to main game functions and change the view accordingly.  All changes to the view are implemented in this file. */
 //
 //  TicTacToeViewController.swift
 //  TicTacToe
@@ -80,9 +81,19 @@ public class TicTacToeViewController: UIViewController {
             let board: [String] = helperFunctions.converUIButtonArrayToBoard(buttonsArray)
             if helperFunctions.gameIsOver(board, turn: currentTurn) {
                 manageGameOver(board)
-            }; changeTurn()
-            print(miniMax.bestMove(board, turn: currentTurn))
+            }; makeComputerTurn(board)
         }
+    }
+    
+    func makeComputerTurn(board: Array<String>) {
+        // PARAMS: board (Array<String>): current board
+        // RETURNS: none
+        // USE: make the computers move on the board
+        
+        let indexOfButton: Int = miniMax.getIndexOfBestMove(board, turn: helperFunctions.localChangeTurn(currentTurn))
+        let computerTurn: Turn = helperFunctions.localChangeTurn(currentTurn)
+        
+        buttonsArray[indexOfButton].setTitle(computerTurn.rawValue, forState: UIControlState.Normal)
     }
     
     func manageGameOver(board: Array<String>) {
