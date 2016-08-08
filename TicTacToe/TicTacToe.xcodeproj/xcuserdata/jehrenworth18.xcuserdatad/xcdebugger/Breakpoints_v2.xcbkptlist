@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MiniMax.swift"
-            timestampString = "492294905.901157"
+            timestampString = "492309668.500735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "minimaxWithPruning(_:turn:depth:alpha:beta:)"
             landmarkType = "5">
          </BreakpointContent>

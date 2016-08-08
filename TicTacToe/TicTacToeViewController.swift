@@ -1,4 +1,4 @@
-/* Send out calls to main game functions and change the view accordingly.  All changes to the view are implemented in this file. */
+/* Send out calls to main game functions and alter the view accordingly.  All changes to the view are implemented in this file. */
 //
 //  TicTacToeViewController.swift
 //  TicTacToe
@@ -80,12 +80,27 @@ public class TicTacToeViewController: UIViewController {
             selectedSquare.setTitle(currentTurn.rawValue, forState: UIControlState.Normal)
             let board: [String] = helperFunctions.converUIButtonArrayToBoard(buttonsArray)
             if helperFunctions.gameIsOver(board, turn: currentTurn) {
-                manageGameOver(board)
-            }; makeComputerTurn(board)
+                manageGameOver(board, turn: currentTurn)
+            }; handleComputerMove(board)
         }
     }
     
-    func makeComputerTurn(board: Array<String>) {
+    func handleComputerMove(board: Array<String>) {
+        // PARAMS: board (Array<String>): current board
+        // RETURNS: none
+        // USE: make the computers move and check for game over, handling if so
+        
+        makeComputerMove(board)
+        
+        let newBoard: [String] = helperFunctions.converUIButtonArrayToBoard(buttonsArray)
+        let computerTurn: Turn = helperFunctions.localChangeTurn(currentTurn)
+        
+        if helperFunctions.gameIsOver(newBoard, turn: computerTurn) {
+            manageGameOver(newBoard, turn: computerTurn)
+        }
+    }
+    
+    func makeComputerMove(board: Array<String>) {
         // PARAMS: board (Array<String>): current board
         // RETURNS: none
         // USE: make the computers move on the board
@@ -96,13 +111,13 @@ public class TicTacToeViewController: UIViewController {
         buttonsArray[indexOfButton].setTitle(computerTurn.rawValue, forState: UIControlState.Normal)
     }
     
-    func manageGameOver(board: Array<String>) {
-        // PARAMS: board (Array<String>): current board
+    func manageGameOver(board: Array<String>, turn: Turn) {
+        // PARAMS: board (Array<String>): current board, turn (Turn): current turn
         // RETURNS: none
         // USE: check if player has won or if board is full, and manage endgame accordingly
         
-        if gameLogic.playerHasWon(board, turn: currentTurn) {
-            display.text = "Player \(currentTurn.rawValue) wins!"
+        if gameLogic.playerHasWon(board, turn: turn) {
+            display.text = "Player \(turn.rawValue) wins!"
         } else if helperFunctions.boardIsFull(board) {
             display.text = "It's a draw. Nobody wins."
         }; manageReset()
@@ -157,7 +172,7 @@ public class TicTacToeViewController: UIViewController {
     }
     
     func manageLabelTapped(sender: UITapGestureRecognizer) {
-        // PARAMS: sender (UITapGestureRecognizer): the gesture recognizer
+        // PARAMS: sender (UITapGestureRecognizer): the gesture recognizer to use
         // RETURNS: none
         // USE: remove the gesture recognizer from the display label and reset the board
         

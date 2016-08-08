@@ -27,6 +27,7 @@ public class MiniMax {
         // PARAMS: board (Array<String>): current board, turn (Turn): current turn, depth (Int): depth from current node to end of game node
         // RETURNS: Int
         // USE: call minimax and bestMove will be set to an integer representing the position of the best possible move on the board
+        // NOTE!: initial call must set depth to 0, alpha to -NSIntegerMax, and beta to NSIntegerMax
         
         if helperFunctions.gameIsOver(board, turn: helperFunctions.localChangeTurn(turn)) {
             return score(board, turn: helperFunctions.localChangeTurn(turn), depth: depth)
@@ -43,17 +44,11 @@ public class MiniMax {
         for childNode in children {
             let score: Int = minimaxWithPruning(childNode.0, turn: helperFunctions.localChangeTurn(turn), depth: currentDepth, alpha: varAlpha, beta: varBeta)
             if turn == Turn.PlayerX {
-                if score > alpha {
-                    print(score, alpha)
-                    varAlpha = score
-                }
+                if score > alpha { varAlpha = score }
             } else {
-                if score < beta {
-                    varBeta = score
-                }
-            }; if varAlpha >= varBeta {
-                return turn == Turn.PlayerX ? varAlpha : varBeta
-            } else { scores.append(score); moves.append(childNode.1) }
+                if score < beta { varBeta = score }
+            }; if varAlpha >= varBeta { return turn == Turn.PlayerX ? varAlpha : varBeta }
+            else { scores.append(score); moves.append(childNode.1) }
         }
         
         if turn == Turn.PlayerX {
